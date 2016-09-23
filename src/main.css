@@ -71,6 +71,7 @@
   background-color: pink;
   overflow: auto;
   position: relative;
+
 }
 .home-wrap{
   background-image: url('../images/home-bg.jpg');

@@ -10,7 +10,7 @@ class App extends React.Component {
     }
     return(
       <div>
-            <img src="bg"style={style.home}></img>
+            
       </div>
     )
   }

@@ -4,7 +4,8 @@ import App from  './App.js'
 import Home from './home.js'
 import About from './about.js'
 import Work from './work.js'
-
+import Blog from './blog.js'
+import Essay from './essay.js'
 class Routes extends React.Component {
   render () {
       return (
@@ -13,6 +14,8 @@ class Routes extends React.Component {
                 <IndexRoute component={Home}/>      //IndexRoute 与父路由同时显示，
                 <Route path="/about" component={About} />
                 <Route path="/work" component={Work} />
+                <Route path="/blog" component={Blog} />
+                <Route path="/essay/:id" component={Essay} />
             </Route>
         </Router>
       )

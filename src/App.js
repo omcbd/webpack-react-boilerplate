@@ -8,7 +8,8 @@ class App extends React.Component {
 
     super()
     this.state={
-      show:true
+      show:true,
+      title:''
     }
   }
  handleClick  = ()  => {
@@ -22,15 +23,27 @@ class App extends React.Component {
    })
  }
   componentWillMount(){
+
     this.juge()
     window.onresize=this.juge.bind(this)
+  }
+  setTitle(){
+    this.setState({
+      title: this.context.router.isActive('/',true) ? 'Home' :
+              this.context.router.isActive('/blog') ? 'Blog' :
+              this.context.router.isActive('/work') ? 'Work' :
+              this.context.router.isActive('/about') ? 'About' : 'Item'
+    })
+  }
+  componentWillReceiveProps(){
+    this.setTitle()
   }
   render () {
 
     return(
       <div className="content-wrap" >
 
-            {this.state.show?<Head />:<LeftNav />}
+            {this.state.show?<Head />:<LeftNav title={this.state.title} />}
             <div className="content-main">
                   {this.props.children}
             </div>
@@ -39,5 +52,7 @@ class App extends React.Component {
     )
   }
 }
-
+App.contextTypes={
+  router:React.PropTypes.object
+}
 export default App;

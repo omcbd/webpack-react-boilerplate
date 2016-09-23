@@ -8,7 +8,8 @@ class Nav extends React.Component {
         backgroundColor:'#00BCD4',
         display:'flex',
         flexDirection:'column',
-        width:'300px',
+        minWidth:'300px',
+        width:'300px'
       },
       title:{
         color:'#fff',
@@ -23,7 +24,7 @@ class Nav extends React.Component {
       }
     }
     return <div style={style.wrap} className="LeftNav">
-            <h3 style={style.title}>my corner</h3>
+            <h3 style={style.title}>my corner@{this.props.title}</h3>
             <p style={style.nav}><Link to="/"activeStyle={{backgroundColor:'rgba(0,0,0,0.2)'}}onlyActiveOnIndex={true}><span className="glyphicon glyphicon-home"></span> Home</Link></p>
             <p style={style.nav}><Link to="/about"activeStyle={{backgroundColor:'rgba(0,0,0,0.2)'}}><span className="glyphicon glyphicon-home"></span> About</Link></p>
             <p style={style.nav}><Link to="/work"activeStyle={{backgroundColor:'rgba(0,0,0,0.2)'}}><span className="glyphicon glyphicon-home"></span> Work</Link></p>
